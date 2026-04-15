@@ -216,7 +216,11 @@ const HomePage = () => {
               : 'fa-regular text-gray-400'
             }`} />
           </button>
-          
+            {/* 🔍 DEBUG: Show the actual image URL */}
+  <div className="text-xs text-red-500 mb-1">
+    {recipe.image}
+  </div>
+
           <img src={recipe.image || "https://via.placeholder.com/120x120/FFEBCD/964B00?text=🍲"} 
                alt={recipe.recipe_name} 
                className="w-full max-w-[12rem] h-48 border-4 border-[#FF9933] rounded-xl shadow-lg object-cover mb-2 mt-2" />
