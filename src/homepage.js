@@ -31,7 +31,7 @@ const HomePage = () => {
       setLoading(true);
 
       // Fetch recipes
-      const recipeRes = await fetch("https://ayuraahar.onrender.com/api/recipes/", {
+      const recipeRes = await fetch("https://ayuraahar.onrender.com///api/recipes/", {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const HomePage = () => {
       setIsLikedStates(likes);
 
       // Fetch categories
-      const catRes = await fetch("https://ayuraahar.onrender.com/api/categories/", {
+      const catRes = await fetch("https://ayuraahar.onrender.com///api/categories/", {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const HomePage = () => {
 
       console.log("❤️ Toggling recipe:", recipeId);
       
-      const response = await fetch(`https://ayuraahar.onrender.com/recipe/${recipeId}/like/`, {
+      const response = await fetch(`https://ayuraahar.onrender.com///recipe/${recipeId}/like/`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -216,11 +216,7 @@ const HomePage = () => {
               : 'fa-regular text-gray-400'
             }`} />
           </button>
-            {/* 🔍 DEBUG: Show the actual image URL */}
-  <div className="text-xs text-red-500 mb-1">
-    {recipe.image}
-  </div>
-
+          
           <img src={recipe.image || "https://via.placeholder.com/120x120/FFEBCD/964B00?text=🍲"} 
                alt={recipe.recipe_name} 
                className="w-full max-w-[12rem] h-48 border-4 border-[#FF9933] rounded-xl shadow-lg object-cover mb-2 mt-2" />
